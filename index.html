@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <br><title>比特幣匯率轉換</title></br>
+    <link rel="Shortcut Icon" type="image/x-icon" href="Bitcoin.png" />
+    <link rel="stylesheet" href="style.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+</head>
+
+<body>
+    </td><td>
+    </td><td style="text-align:right;vertical-align:text-top;">
+    <h1><center face="微軟正黑體">比特幣匯率轉換計算器</h1></td><td style="text-align:right;">
+    </td></tr></table>
+    <br></br>
+    <center><form method=GET action="/currency">
+        <div>
+            <span class=inplabel>匯率日期：</span>
+            <input type=date name=date id=date class="mytext">
+            <span class=inplabel>比特幣(顆)：</span>
+            <input type=number step="0.0000001" name=BTC id=BTC value=0.0000 min=0 class="mytext">
+            <span class=inplabel>從：</span>
+            <select name=from class="mytext">
+                <option value="BTC" selected>比特幣 (BTC)</option>
+            </select>
+            <span class=inplabel &emsp>到：</span>
+            <select name=to class="mytext">
+                <option value="USD" selected>美元 (USD)</option>
+            </select>
+            <span class=inplabel></span>
+            <input type=button id="Btn" value=轉換 onclick="convert()" class="mytext">
+        </div>
+        <br>
+        <table style="border:6px #41507F solid;">
+            <colgroup>
+                <col span="2" class="gray-bg">
+            </colgroup>
+                <tr>
+                <td align=center class=exchange_content><span id='result_1'></span></td>
+            </tr>
+        </table>
+        <table style="border:6px #41507F solid;">
+            <colgroup>
+                <col span="2" class="gray-bg">
+            </colgroup>
+            <tr>
+                <td align=center class=exchange_title>選擇日期匯率</td>
+            </tr>
+            <tr>
+                <td align=center class=exchange_content><span id='result_2'></span></td>
+            </tr>
+        </table>
+        <!-- 圖表位置 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <table style="border:6px #41507F solid;">
+            <colgroup>
+                <col span="2" class="gray-bg">
+            </colgroup>	
+            <tr>
+                <td class="chart-container" style="position: relative; height:30vh; width:800px">
+                    <center><p style="font-size:25pt;font-weight:bold;">歷史匯率</p>
+                    <canvas id="myChart"></canvas>
+                </td>	
+            </tr>
+        </table>
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    </form>
+</body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="Chart.bundle.js"></script>   
+<script type="text/javascript" src="Date.js"></script>
+<script type="text/javascript" src="Chart.js"></script>
+<script type="text/javascript" src="Main.js"></script>
+</html>
